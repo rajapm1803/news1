@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import axios from 'axios'
@@ -7,7 +6,7 @@ import { Cardview } from './Cardview'
 
 
 export const Dashboard = () => {
-    // const navigate = useNavigate()
+
     const [news, setNews] = useState([])
 
     useEffect(() => {

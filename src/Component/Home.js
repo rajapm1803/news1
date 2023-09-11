@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
@@ -9,7 +9,7 @@ export const Home = () => {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (user == "raja" && pass == "raman") {
+    if (user === "raja" && pass === "raman") {
       localStorage.setItem("isAuthenticated", true);
       navigate("/dashboard");
     }
