@@ -10,17 +10,19 @@ export const Dashboard = () => {
     // const navigate = useNavigate()
     const [news, setNews] = useState([])
 
-  useEffect(() => {
-    // if(! localStorage.getItem("isAuthenticated")){
-    //     navigate('/home')
-    // }
-   axios.get("https://newsapi.org/v2/everything?q=tesla&from=2023-08-11&sortBy=publishedAt&apiKey=b3389e4b2090499aa974e6d9e1098db3")
-         .then((res)=>{
-          setNews(res.data?.articles)
-          // console.log(news);
-          
-         })
-  }, [])
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get("https://newsapi.org/v2/everything?q=tesla&from=2023-08-11&sortBy=publishedAt&apiKey=b3389e4b2090499aa974e6d9e1098db3");
+          setNews(response.data?.articles);
+        } catch (error) {
+          // Handle the error here, e.g., log it or set an error state.
+          console.error("Error fetching data:", error);
+        }
+      };
+    
+      fetchData();
+    }, []);
 
   return (
     <Container fluid className="ps-5 pe-5">
