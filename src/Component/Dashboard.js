@@ -25,9 +25,9 @@ export const Dashboard = () => {
   return (
     <Container fluid className="ps-5 pe-5">
     <Row>
-      {news.map((product) => {
+      {news.map((product,name) => {
         return (
-          <Col key={product.name} lg={3} md={6} xs={12}>
+          <Col key={name} lg={3} md={6} xs={12}>
             <Cardview {...product}  />
           </Col>
         );
